@@ -2,7 +2,7 @@ $(function() {
 
     "use strict";
 
-    /* Preloader script
+    /* Preloader script */
     var width = 100,
         perfData = window.performance.timing,
         EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
@@ -43,7 +43,7 @@ $(function() {
         $('.coda-top-panel').addClass('coda-fade-in')
     }, time);
 
-     Touch behavior to page elements in touchscreen devices */
+    /* Touch behavior to page elements in touchscreen devices */
     $('*').on('touchstart', function() {
         $(this).trigger('hover');
     }).on('touchend', function() {
