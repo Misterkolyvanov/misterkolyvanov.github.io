@@ -29,6 +29,46 @@
         <link rel="stylesheet" href="css/main.css">
         <!-- End CSS files -->
 
+
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init('user_m5zed1mGc3VWS889bCXVs');
+            })();
+    
+        
+            $(function(){
+                $("#coda-contact-form").on("submit", function(){
+                    event.preventDefault();
+
+                    var myform = $("#coda-contact-form");
+
+               
+                    var service_id = "default_service";
+                    var template_id = "template_VHiDZVzs";
+
+                    myform.find("button").text("Sending...");
+                    emailjs.sendForm(service_id,template_id,myform[0])
+                        .then(function(){ 
+                            myform.replaceWith("<h3>Your Message has been sent! Thank you!</h3>");
+                            myform.find("button").text("Send");
+                        }, 
+                        function(err) {
+                            alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+                            myform.find("button").text("Send");
+                    });
+                    return false; 
+                });
+            });
+
+
+
+
+
+        </script>
     </head>
 
     <body id="coda-body" class="coda-blue-color-scheme">
@@ -386,7 +426,7 @@
                             </div>
                         </article>
                         <!-- end portfolio item, article -->
-                        <!-- portfolio item, article -->
+                        <!-- portfolio item, article 
                         <article class="col-lg-6 col-12 filtr-item coda-filter-item" data-category="1" data-sort="value">
                             <div class="coda-portfolio-item">
                                 <img class="coda-img" src="img/tplogo4.jpg" alt="tp">
@@ -397,7 +437,7 @@
                                 </div>
                             </div>
                         </article>
-                        <!-- end portfolio item, article -->
+                        end portfolio item, article -->
                         <!-- portfolio item, article -->
                         <article class="col-lg-6 col-12 filtr-item coda-filter-item" data-category="1" data-sort="value">
                             <div class="coda-portfolio-item">
@@ -528,19 +568,19 @@
                         <!-- end contacts data -->
                         <!-- contact form -->
                         <div class="col-md-6 col-12">
-                            <form class="coda-contact-form" action="#" method="post">
+                            <form class="coda-contact-form" id="coda-contact-form" action="#" method="post">
                                 <div class="coda-input-box">
-                                    <input id="coda-name" class="coda-input" type="text" required="">
+                                    <input id="coda-name" class="coda-input" name="contact_name" type="text" required="">
                                     <label for="coda-name" class="coda-label">name</label>
                                     <span class="coda-bottom-border"></span>
                                 </div>
                                 <div class="coda-input-box">
-                                    <input id="coda-email" class="coda-input" type="email" required="">
+                                    <input id="coda-email" class="coda-input" name='contact_email' type="email" required="">
                                     <label for="coda-email" class="coda-label">email address</label>
                                     <span class="coda-bottom-border"></span>
                                 </div>
                                 <div class="coda-input-box">
-                                    <textarea id="coda-message" class="coda-input" required=""></textarea>
+                                    <textarea id="coda-message" class="coda-input" name="contact_message" required=""></textarea>
                                     <label for="coda-message" class="coda-label">message</label>
                                     <span class="coda-bottom-border"></span>
                                 </div>
@@ -716,13 +756,13 @@
         </div>
         <!-- End PracticePal (Pop-up window) -->
 
-        <!-- Start Title Pipe (Pop-up window) -->
+        <!-- Start Title Pipe (Pop-up window)
         <div id="expedition" class="coda-pop-up-window">
             <div class="coda-pop-up-top-panel">
                 <div class="container">
                     <div class="row justify-content-end">
-                        <div class="col-auto">
-                            <!-- close pop-up window button -->
+                        <div class="col-auto"> -->
+                            <!-- close pop-up window button 
                             <a href="#expedition" class="coda-pop-up-btn">
                                 <div class="coda-close-ico">
                                     <span class="coda-label">close</span>
@@ -731,14 +771,14 @@
                                         <span class="coda-close-vertical"></span>
                                     </div>
                                 </div>
-                            </a>
-                            <!-- end close pop-up window button -->
+                            </a> -->
+                            <!-- end close pop-up window button
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- pop-up window content, article -->
-            <article class="coda-pop-up-content">
+           <!-- <article class="coda-pop-up-content">
                 <div class="container">
                     <div class="row justify-content-between">
                         <div class="col-md-5 col-12">
@@ -772,8 +812,8 @@
                     </div>
                 </div>
             </article>
-            <!-- end pop-up window content, article -->
-        </div>
+             end pop-up window content, article
+        </div> -->
         <!-- End Title Pipe (Pop-up window) -->
 
         <!-- Start Internal Backlog Tool (Pop-up window) -->
