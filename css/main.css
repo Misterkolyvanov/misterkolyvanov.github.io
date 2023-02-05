@@ -799,6 +799,7 @@
       z-index: 0;
     }
 
+    @media screen and (min-width: 481px) {
     .coda-header .coda-background-img {
       display: block;
       width: 100%;
@@ -812,13 +813,16 @@
               transform: translate(0);
       -webkit-animation: codaScale 60s ease-in-out alternate infinite;
               animation: codaScale 60s ease-in-out alternate infinite;
-
-              @media only screen and (max-width: 767px) {
-                .coda-header .coda-background-img {
-                  object-position: left 50%;
-                }
-              }
     }
+  }
+
+    @media screen and (max-width: 480px) {
+      .coda-header .coda-background-img {
+        display: absolute !important;
+        height: 100%;
+      }
+    }
+    
 
     @-webkit-keyframes codaScale {
       0% {
